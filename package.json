@@ -1,0 +1,24 @@
+{
+  "name": "k6-es6",
+  "version": "1.0.0",
+  "description": "test project for k6 to use es6 through the power of babel and webpack",
+  "main": "main.js",
+  "devDependencies": {
+    "core-js": "^3.0.1",
+    "moment": "^2.24.0"
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "scripts": {
+    "webpack": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "k6"
+  ],
+  "author": "Mihail Stoykov",
+  "license": "ISC"
+}
