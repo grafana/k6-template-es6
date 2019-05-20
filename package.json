@@ -5,7 +5,7 @@
   "main": "main.js",
   "devDependencies": {
     "core-js": "^3.0.1",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "babel-loader": "^8.0.6",
@@ -20,5 +20,9 @@
     "k6"
   ],
   "author": "Mihail Stoykov",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "xml2js": "^0.4.19"
+  }
 }

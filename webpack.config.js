@@ -1,6 +1,7 @@
  var path = require('path');
  var webpack = require('webpack');
  module.exports = {
+     mode: "production",
      entry: './main.js',
      output: {
          path: path.resolve(__dirname, 'build'),
@@ -18,7 +19,8 @@
      stats: {
          colors: true
      },
-     target: "node",
+     target: "web",
+         externals: /k6(\/.*)?/,
      devtool: 'source-map'
  };
 
