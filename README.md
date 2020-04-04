@@ -1,14 +1,12 @@
+For additional details, see [this article in the k6 docs](https://k6.io/docs/using-k6/modules)
+
 ## What is this?
-This is a small proof of concept that you can use node.js+webpack+babel+browserify to automatically generate a
-single js file that could be ran by k6.
+This is a template repository showing how to use webpack, babel and corejs to bundle a test project into a single test script which can be run by k6.
+
 This means that you can write scripts using:
 1. node module resolution
-2. using external npm libraries and getting them automatically browserfied (this will obviously not
-   work in some cases but at least it's more automatic :) )
-3. Possibly being used with `--compatibility-mode=base` which does have a performance benefits
-   ([1](https://github.com/loadimpact/k6/issues/1167#issuecomment-553787857)
-   [2](https://github.com/loadimpact/k6/issues/1167#issuecomment-553835092))
-4. If extend can do all kind of other things including writing scripts in typescript ;)
+2. external node modules and getting them automatically bundled.
+3. `--compatibility-mode=base`, which does have performance benefits ([1](https://github.com/loadimpact/k6/issues/1167#issuecomment-553787857) [2](https://github.com/loadimpact/k6/issues/1167#issuecomment-553835092))
 
 ## How to use it 
 ```
@@ -16,10 +14,4 @@ This means that you can write scripts using:
 npm install .
 npm run-script webpack
 k6 run build/app.bundle.js
-```
-
-I am using docker to run inside of it as :
-
-```
-docker run --user $UID --rm -ti -v "`readlink -f .`:/data" --entrypoint /bin/bash circleci/node:11
 ```
