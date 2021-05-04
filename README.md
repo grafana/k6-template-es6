@@ -15,3 +15,5 @@ npm install .
 npm run-script webpack
 k6 run build/app.bundle.js
 ```
+
+To try out any of the other examples, just copy the content of your example file of choice into `main.js`
