@@ -1,24 +1,52 @@
-For additional details, see [this article in the k6 docs](https://k6.io/docs/using-k6/modules)
+This is a template repository showing how to use `Babel` and `Webpack` to bundle the different files into CommonJS modules, using its [`webpack.config.js`](./webpack.config.js) configuration.
 
-## What is this?
-This is a template repository showing how to use webpack, babel and corejs to bundle a test project into a single test script which can be run by k6.
-
-This means that you can write scripts using:
-1. node module resolution
+In this project, you can write k6 tests using:
+1. node module resolution.
 2. external node modules and getting them automatically bundled.
-3. `--compatibility-mode=base`, which does have performance benefits ([1](https://github.com/loadimpact/k6/issues/1167#issuecomment-553787857) [2](https://github.com/loadimpact/k6/issues/1167#issuecomment-553835092))
+3. unsupported ES+ features like the optional chaining ( `?.` ) operator.
+4. [--compatibility-mode=base](https://grafana.com/docs/k6/latest/using-k6/javascript-compatibility-mode/), which does have performance benefits. 
 
-## How to use it 
-```
-# change main.js and package.json for your project
-npm install .
-npm run-script webpack
+## Installation
 
-# local execution
-k6 run build/app.bundle.js
+Click **Use this template** to create a repository from this template. 
 
-# docker execution
-docker run -v $(pwd)/build:/build loadimpact/k6 run /build/app.bundle.js 
+Clone the generated repository on your local machine, move to the project root folder and install the dependencies defined in [`package.json`](./package.json)
+
+```bash
+npm install
 ```
 
-To try out any of the other examples, just copy the content of your example file of choice into `main.js`
+## Running the test
+
+Attempting to run the tests in [src](./src/) will fail because:
+-  k6 does not know how to resolve node modules.
+-  k6 does not recognize some ES+ features like the optional chaining ( `?.` ) operator. 
+
+To address this, we'll use `Webpack` to bundle the dependencies and polyfill ES+ features.
+
+```bash
+npm run bundle
+```
+
+This command creates the final test files to the `./dist` folder.
+
+Once that is done, we can run our script the same way we usually do, for instance:
+
+```bash
+k6 run dist/optional-chaining-test.js
+# or 
+k6 run dist/faker-test.js
+```
+
+The bundled tests will be transpiled to ES5.1 code with CommonJS modules, this allows running the tests with [`--compatibility-mode=base`](https://grafana.com/docs/k6/latest/using-k6/javascript-compatibility-mode/) for better performance:
+
+```bash
+k6 run --compatibility-mode=base dist/optional-chaining-test.js
+```
+
+## Learn more
+
+- [k6 Docs: working with modules](https://grafana.com/docs/k6/latest/using-k6/modules/)
+- [JavaScript Compatibility Mode](https://grafana.com/docs/k6/latest/using-k6/javascript-compatibility-mode/)
+- [grafana/k6-template-typescript](https://github.com/grafana/k6-template-typescript)
+- [grafana/k6-rollup-example](https://github.com/grafana/k6-rollup-example)
