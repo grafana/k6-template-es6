@@ -4,5 +4,5 @@
       "@babel/preset-env"
     ]
   ],
-  "plugins": [ "@babel/plugin-transform-block-scoping"]
+  "plugins": [ "@babel/plugin-transform-block-scoping", "@babel/plugin-transform-optional-chaining"]
 }

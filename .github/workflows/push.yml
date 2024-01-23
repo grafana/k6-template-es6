@@ -1,0 +1,27 @@
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  k6_transpile_bundle_test:
+    name: Transpile, bundle and run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run bundle
+      - name: Run local k6 babel test
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: dist/optional-chaining-test.js
+      - name: Run local k6 npm module test
+        uses: grafana/k6-action@v0.3.1
+        with:
+          filename: dist/faker-test.js
