@@ -4,7 +4,6 @@ In this project, you can write k6 tests using:
 1. node module resolution.
 2. external node modules and getting them automatically bundled.
 3. unsupported ES+ features like the optional chaining ( `?.` ) operator.
-4. [--compatibility-mode=base](https://grafana.com/docs/k6/latest/using-k6/javascript-compatibility-mode/), which does have performance benefits. 
 
 ## Installation
 
@@ -38,15 +37,9 @@ k6 run dist/optional-chaining-test.js
 k6 run dist/faker-test.js
 ```
 
-The bundled tests will be transpiled to ES5.1 code with CommonJS modules, this allows running the tests with [`--compatibility-mode=base`](https://grafana.com/docs/k6/latest/using-k6/javascript-compatibility-mode/) for better performance:
+## See also
 
-```bash
-k6 run --compatibility-mode=base dist/optional-chaining-test.js
-```
-
-## Learn more
-
-- [k6 Docs: working with modules](https://grafana.com/docs/k6/latest/using-k6/modules/)
-- [JavaScript Compatibility Mode](https://grafana.com/docs/k6/latest/using-k6/javascript-compatibility-mode/)
-- [grafana/k6-template-typescript](https://github.com/grafana/k6-template-typescript)
+- [Using k6 / Modules](https://grafana.com/docs/k6/latest/using-k6/modules/)
+- [Using k6 / JavaScript compatibility mode](https://grafana.com/docs/k6/latest/using-k6/javascript-compatibility-mode/)
 - [grafana/k6-rollup-example](https://github.com/grafana/k6-rollup-example)
+- [grafana/k6-template-typescript](https://github.com/grafana/k6-template-typescript)
