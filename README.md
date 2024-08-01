@@ -1,3 +1,6 @@
+> [!WARNING]
+> Note, most of the features covered by this template are now natively supported by k6. Set the `--compatibility-mode=experimental_enhanced` option to use it. Check the documentation for the details https://grafana.com/docs/k6/latest/using-k6/javascript-typescript-compatibility-mode/#experimental-enhanced-mode.
+
 This is a template repository showing how to use `Babel` and `Webpack` to bundle the different files into CommonJS modules, using its [`webpack.config.js`](./webpack.config.js) configuration.
 
 In this project, you can write k6 tests using:
