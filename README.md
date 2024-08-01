@@ -1,5 +1,5 @@
 > [!WARNING]
-> Note, most of the features covered by this template are now natively supported by k6. Set the `--compatibility-mode=experimental_enhanced` option to use it. Check the documentation for the details https://grafana.com/docs/k6/latest/using-k6/javascript-typescript-compatibility-mode/#experimental-enhanced-mode.
+> This template is deprecated due to native ES6+TypeScript support released in k6 [v0.52.0](https://github.com/grafana/k6/releases/tag/v0.52.0). Set the `--compatibility-mode=experimental_enhanced` option to use it. Check the [documentation for the details](https://grafana.com/docs/k6/latest/using-k6/javascript-typescript-compatibility-mode/#experimental-enhanced-mode).
 
 This is a template repository showing how to use `Babel` and `Webpack` to bundle the different files into CommonJS modules, using its [`webpack.config.js`](./webpack.config.js) configuration.
 
