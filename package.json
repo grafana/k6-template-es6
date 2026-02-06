@@ -14,7 +14,7 @@
     "webpack-glob-entries": "^1.0.1"
   },
   "engines": {
-    "node": "18"
+    "node": "24"
   },
   "scripts": {
     "bundle": "webpack"
