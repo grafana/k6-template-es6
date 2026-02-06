@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "test project for k6 to use es6 through the power of babel and webpack",
   "devDependencies": {
-    "@babel/core": "^7.23.7",
+    "@babel/core": "^7.29.0",
     "@babel/plugin-transform-block-scoping": "^7.23.4",
     "@babel/plugin-transform-optional-chaining": "^7.23.4",
-    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-env": "^7.29.0",
     "babel-loader": "^9.1.3",
     "clean-webpack-plugin": "4.0.0",
     "webpack": "^5.89.0",
