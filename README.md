@@ -1,5 +1,7 @@
 > [!WARNING]
-> This template is deprecated due to native ES6+TypeScript support released in k6 [v0.52.0](https://github.com/grafana/k6/releases/tag/v0.52.0). Set the `--compatibility-mode=experimental_enhanced` option to use it. Check the [documentation for the details](https://grafana.com/docs/k6/latest/using-k6/javascript-typescript-compatibility-mode/#experimental-enhanced-mode).
+> **This template is deprecated and this repository is archived.**
+>
+> k6 has native ES6+ and TypeScript support since [v0.52.0](https://github.com/grafana/k6/releases/tag/v0.52.0) (released June 2024). Set the `--compatibility-mode=experimental_enhanced` option to use it, and check the [documentation for the details](https://grafana.com/docs/k6/latest/using-k6/javascript-typescript-compatibility-mode/#experimental-enhanced-mode). The `Babel`/`Webpack` bundling described below is no longer necessary; the contents are kept for historical reference only.
 
 This is a template repository showing how to use `Babel` and `Webpack` to bundle the different files into CommonJS modules, using its [`webpack.config.js`](./webpack.config.js) configuration.
 
